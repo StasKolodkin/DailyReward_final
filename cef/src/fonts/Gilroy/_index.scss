@@ -1,0 +1,75 @@
+@font-face {
+	font-family: Gilroy;
+	font-weight: 900;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-Black.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 700;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 800;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 300;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-Light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 500;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-Medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 400;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 600;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 100;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-Thin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Gilroy;
+	font-weight: 200;
+	font-display: block;
+	font-style: normal;
+	src: url('@fonts/Gilroy/Gilroy-UltraLight.woff2') format('woff2');
+}
+
+* {
+	font-synthesis: none;
+}

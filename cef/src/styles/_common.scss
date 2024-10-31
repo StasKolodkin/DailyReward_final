@@ -1,0 +1,20 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: Gilroy, sans-serif;
+}
+
+body {
+	overflow: hidden;
+}
+
+img {
+	pointer-events: none;
+}
+
+button,
+input {
+	border: none;
+	outline: none;
+}

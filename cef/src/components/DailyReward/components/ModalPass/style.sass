@@ -1,0 +1,215 @@
+@use "sass:math"
+
+$base: 1920
+
+@function pxToVw($px)
+  @return math.div($px, $base) * 100vw
+
+.ModalPass
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  position: relative
+
+  > .ModalPassOverlay
+    width: 100%
+    height: 100%
+
+  > .ModalPassWrapper
+    width: pxToVw(738)
+    height: pxToVw(455)
+    display: flex
+    flex-direction: column
+    gap: pxToVw(35)
+    position: absolute
+    z-index: 5
+    margin-top: pxToVw(125)
+
+    > .headerPass
+      width: 100%
+      height: pxToVw(69)
+      display: flex
+      flex-direction: column
+      gap: pxToVw(10)
+      justify-content: center
+
+      > .titleHeaderPass
+        height: pxToVw(29)
+        width: auto
+        display: flex
+        font-size: pxToVw(24)
+        font-weight: 700
+        gap: pxToVw(5)
+        text-transform: uppercase
+        justify-content: center
+
+        > .defaultTitle
+          text-align: center
+          display: flex
+          align-items: center
+          
+          > span
+            font-family: "Proxima Nova"
+            color: rgb(255, 255, 255)
+
+        > .customTitle
+          color: rgb(29, 99, 230)
+          position: relative
+          display: flex
+          align-items: center
+          justify-content: center
+
+          > span
+            font-family: "Proxima Nova"
+            color: rgb(29, 99, 230)
+
+          > .backgroundLight
+            position: absolute
+
+            > span
+              font-family: "Proxima Nova"
+              filter: blur(pxToVw(10))
+              color: rgb(29, 99, 230)
+
+      > .descriptionHeaderPass
+        height: pxToVw(30)
+        width: pxToVw(372)
+        display: flex
+        align-items: center
+        justify-content: center
+        align-self: center
+        text-align: center
+
+        > span
+          color: rgb(255, 255, 255)
+          font-family: "Proxima Nova"
+          font-size: pxToVw(12)
+          font-weight: 400
+
+    > .bodyPass
+      width: 100%
+      height: pxToVw(351)
+      border-radius: pxToVw(5)
+      background: rgb(14, 14, 14)
+      padding: pxToVw(30)
+
+      > .blocksPass
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: row
+        gap: pxToVw(30)
+
+        > .blockPass
+          width: pxToVw(324)
+          height: pxToVw(291)
+          border-radius: pxToVw(5)
+          background: rgb(22, 22, 22)
+          padding: pxToVw(20) pxToVw(22)
+          display: flex
+          justify-content: space-between
+          flex-direction: column
+
+          > .topBlockPass
+            height: auto
+            display: flex
+            flex-direction: column
+            gap: pxToVw(20)
+
+            > .headerBlockPass
+              height: pxToVw(19)
+              width: auto
+              display: flex
+              justify-content: flex-start
+              gap: pxToVw(5)
+
+              > .iconHeader
+                width: pxToVw(18)
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+
+                > img
+                  width: pxToVw(18)
+                  height: auto
+
+              > .titleHeader
+                width: auto
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+
+                > span
+                  color: rgb(255, 255, 255)
+                  font-family: "Proxima Nova"
+                  font-size: pxToVw(16)
+                  font-weight: 700
+
+            > .descriptionBlockPass
+              height: auto
+              width: pxToVw(234)
+              display: flex
+              flex-direction: column
+              gap: pxToVw(25)
+
+              > .descriptionCell
+                height: auto
+                width: pxToVw(234)
+                display: flex
+                align-items: center
+                justify-content: center
+
+                > span
+                  color: rgb(255, 255, 255)
+                  font-family: "Proxima Nova"
+                  font-size: pxToVw(12)
+                  font-weight: 400
+
+          > .bottomBlockPass
+            width: 100%
+            height: auto
+            display: flex
+            justify-content: center
+            align-items: center
+
+            > .buttonWrapper
+              width: 100%
+              height: auto
+              display: flex
+              justify-content: center
+              align-items: center
+              flex-direction: column
+              gap: pxToVw(7)
+              
+              > .buttonBlock
+                width: pxToVw(233)
+                height: pxToVw(37)
+                border-radius: pxToVw(5)
+                background: rgb(32, 32, 32)
+                display: flex
+                align-items: center
+                justify-content: center
+                gap: pxToVw(4)
+                transition: background 0.2s ease
+
+                &:hover
+                  background: rgb(29, 99, 230)
+
+                > span
+                  color: rgb(255, 255, 255)
+                  font-family: "Proxima Nova"
+                  font-size: pxToVw(12)
+
+                #light
+                  font-weight: 400
+
+                #bold
+                  font-weight: 700
+
+                > img
+                  width: pxToVw(12)
+                  height: pxToVw(12)
+                  transform: translate(0, pxToVw(-0.5))

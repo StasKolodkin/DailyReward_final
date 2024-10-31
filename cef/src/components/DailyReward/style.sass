@@ -1,0 +1,681 @@
+@use "sass:math"
+
+$base: 1920
+
+@function pxToVw($px)
+  @return math.div($px, $base) * 100vw
+
+.DailyReward
+  width: 100%
+  height: 100%
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./assets/img/background.png")
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  display: flex
+  align-items: center
+  justify-content: center
+  user-select: none
+
+  > .container
+    width: pxToVw(1719)
+    height: pxToVw(984)
+    display: flex
+    flex-direction: column
+    gap: pxToVw(48)
+    padding: pxToVw(35) pxToVw(40)
+    background: rgba(14, 14, 14, 0.9)
+    overflow: hidden
+    position: relative
+
+    > .effect
+      width: pxToVw(233)
+      height: pxToVw(233)
+      position: absolute
+      left: pxToVw(24)
+      top: pxToVw(-200)
+      filter: blur(pxToVw(200))
+      background: rgb(29, 99, 230)
+      z-index: 1
+
+    > .header
+      width: 100%
+      display: flex
+      justify-content: space-between
+      z-index: 2
+      
+      > .mainHeader
+        width: pxToVw(513)
+        display: flex
+        justify-content: space-between
+
+        > .title
+          display: flex
+          flex-direction: column
+          gap: pxToVw(8)
+
+          > .nameOfTitle
+            display: flex
+            gap: pxToVw(5)
+            font-weight: 700
+            font-size: pxToVw(24)
+            text-transform: uppercase
+
+            > .defaultTitle
+              text-align: left
+              
+              > span
+                font-family: "Proxima Nova"
+                color: rgb(255, 255, 255)
+
+            > .customTitle
+              color: rgb(29, 99, 230)
+              position: relative
+              display: flex
+              align-items: center
+              justify-content: center
+
+              > span
+                font-family: "Proxima Nova"
+                color: rgb(29, 99, 230)
+
+              > .backgroundLight
+                position: absolute
+
+                > span
+                  font-family: "Proxima Nova"
+                  filter: blur(pxToVw(10))
+                  color: rgb(29, 99, 230)
+
+          > .description
+            width: pxToVw(205)
+            color: rgba(255, 255, 255, 0.5)
+            font-family: "Proxima Nova"
+            font-weight: 400
+            font-size: pxToVw(12)
+
+        > .date
+          display: flex
+          gap: pxToVw(9)
+
+          > .iconDate
+            width: pxToVw(30)
+            height: pxToVw(30)
+            display: flex
+            align-items: center
+            justify-content: center
+            background: rgb(29, 99, 230)
+            border-radius: pxToVw(3)
+
+            > img
+              width: pxToVw(18)
+              height: pxToVw(18)
+
+          > .timerReward
+            display: flex
+            flex-direction: column
+            gap: pxToVw(1)
+
+            > .defaultTitle
+              color: rgb(255, 255, 255)
+              font-size: pxToVw(12)
+              font-weight: 700
+
+              > span
+                font-family: "Proxima Nova"
+
+            > .titleDate
+              display: flex
+              gap: pxToVw(5)
+              color: rgb(29, 99, 230)
+              font-size: pxToVw(12)
+              font-weight: 700
+
+              > span
+                font-family: "Proxima Nova"
+
+      > .close
+        display: flex
+        align-items: center
+        align-self: start
+        gap: pxToVw(15)
+
+        > .title
+          color: rgb(255, 255, 255)
+          font-size: pxToVw(12)
+          font-weight: 400
+
+          > span
+            font-family: "Proxima Nova"
+
+        > .iconClose
+          width: pxToVw(49)
+          height: pxToVw(31)
+          display: flex
+          justify-content: center
+          align-items: center
+
+          > img
+            width: 100%
+            height: 100%
+
+    > .rewards
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: space-between
+      z-index: 2
+
+      > .rewardList
+        width: pxToVw(1142)
+        height: pxToVw(805)
+        display: flex
+        flex-direction: column
+        gap: pxToVw(10)
+
+        > .chooseHeader
+          width: pxToVw(1125)
+          height: pxToVw(30)
+          display: flex
+          justify-content: space-between
+
+          > .chooseType
+            display: flex
+            gap: pxToVw(15)
+
+            > .cellType
+              width: pxToVw(133)
+              height: 100%
+              display: flex
+              align-items: center
+              justify-content: center
+              background: rgb(30, 30, 30, 0.7)
+              border-radius: pxToVw(5)
+              transition: background 0.2s ease
+
+              &.active
+                background: rgb(29, 99, 230)
+
+              &:hover
+                background: rgb(29, 99, 230)
+              
+              > span
+                color: rgb(255, 255, 255)
+                font-family: "Proxima Nova"
+                font-weight: 700
+                font-size: pxToVw(12)
+
+          > .buyDailyReward
+            width: pxToVw(133)
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            background: rgb(30, 30, 30, 0.7)
+            border-radius: pxToVw(5)
+            transition: background 0.2s ease
+
+            &:hover
+              background: rgb(29, 99, 230)
+
+            > span
+              color: rgb(255, 255, 255)
+              font-family: "Proxima Nova"
+              font-weight: 700
+              font-size: pxToVw(12)
+
+        > .rewardRoster
+          width: pxToVw(1142)
+          height: pxToVw(770)
+          padding-top: pxToVw(5) 
+          padding-left: pxToVw(5) 
+          display: grid
+          grid-template-columns: repeat(5, 1fr)
+          grid-auto-rows: min-content
+          overflow-y: auto
+          grid-row-gap: pxToVw(15)
+
+          &::-webkit-scrollbar
+            width: pxToVw(2) 
+
+          &::-webkit-scrollbar-track
+            border-radius: pxToVw(4) 
+            background: rgb(25, 25, 25) 
+
+          &::-webkit-scrollbar-thumb
+            border-radius: pxToVw(4) 
+            background: rgb(29, 99, 230) 
+
+          > .rewardCell
+            width: pxToVw(212)
+            height: pxToVw(190)
+            display: flex
+            flex-direction: column
+            gap: pxToVw(5)
+
+            > .rewardItemCell
+              width: 100%
+              height: pxToVw(155)
+              border-radius: pxToVw(5)
+              border: pxToVw(1) solid #1E1E1E
+              border-width: pxToVw(1)
+              background: radial-gradient(264.01% 132.06% at 50% 50%,rgba(34, 34, 34, 0.5),rgba(0, 0, 0, 0.5) 100%)
+              position: relative
+              overflow: hidden
+              display: flex
+              justify-content: center
+              transition: transform 0.3s ease
+
+              &:hover
+                transform: scale(1.03)
+
+              > .rewardItemStatusBlur
+                position: absolute
+                width: pxToVw(72)
+                height: pxToVw(72)
+                left: pxToVw(152)
+                top: pxToVw(-21)
+                filter: blur(pxToVw(50))
+
+              > .rewardItemImage
+                position: absolute
+                width: pxToVw(150)
+                height: pxToVw(100)
+                display: flex
+                align-items: center
+                justify-content: center
+                top: pxToVw(10)
+
+                > img 
+                  width: 100%
+                  height: 100%
+                  object-fit: contain
+                  object-position: center
+
+                > .load
+                  width: pxToVw(40)
+                  height: pxToVw(40)
+
+                  > img
+                    width: 100%
+                    height: 100%
+
+              > .rewardItemTopLine
+                width: pxToVw(187)
+                height: pxToVw(20)
+                display: flex
+                justify-content: space-between
+                position: absolute
+                top: pxToVw(10)
+                left: pxToVw(10)
+
+                > .rewardItemQuantity
+                  width: auto
+                  height: pxToVw(20)
+                  border-radius: pxToVw(5)
+                  background: rgb(43, 43, 43)
+                  padding: 0 pxToVw(8)
+                  display: flex
+                  align-items: center
+                  justify-content: center
+
+                  > span
+                    color: rgb(255, 255, 255)
+                    font-family: "Proxima Nova"
+                    font-size: pxToVw(10)
+                    font-weight: 700
+
+                > .rewardItemQuality
+                  width: pxToVw(18)
+                  height: pxToVw(3)
+                  border-radius: pxToVw(50)
+                  transform: translate(0, pxToVw(3))
+
+              > .rewardItemBottomLine
+                width: pxToVw(187)
+                height: pxToVw(33)
+                display: flex
+                justify-content: space-between
+                position: absolute
+                bottom: pxToVw(14)
+                left: pxToVw(15)
+
+                > .rewardItemNaming
+                  width: auto
+                  height: pxToVw(29)
+                  display: flex
+                  flex-direction: column
+
+                  > .rewardItemName
+                    width: auto
+                    height: pxToVw(17)
+                    display: flex
+                    align-items: center
+                    justify-content: flex-start
+
+                    > span
+                      color: rgb(255, 255, 255)
+                      font-family: "Proxima Nova"
+                      font-size: pxToVw(12)
+                      font-weight: 700
+
+                  > .rewardItemCategory
+                    width: auto
+                    height: pxToVw(12)
+                    display: flex
+                    align-items: center
+                    justify-content: flex-start
+
+                    > span
+                      color: rgba(255, 255, 255, 0.5)
+                      font-family: "Proxima Nova"
+                      font-size: pxToVw(10)
+                      font-weight: 400
+
+                > .rewardItemDay
+                  width: pxToVw(84)
+                  height: pxToVw(20)
+                  display: flex
+                  flex-direction: row
+                  gap: pxToVw(5)
+                  align-self: flex-end
+
+                  > .rewardItemDayIcon
+                    width: pxToVw(20)
+                    height: pxToVw(20)
+                    border-radius: pxToVw(5)
+                    background: rgb(29, 99, 230)
+                    display: flex
+                    align-items: center
+                    justify-content: center
+
+                    > img
+                      width: pxToVw(11.25)
+                      height: pxToVw(10.3)
+
+                  > .rewardItemDayValue
+                    width: pxToVw(59)
+                    height: pxToVw(20)
+                    border-radius: pxToVw(5)
+                    background: rgb(43, 43, 43)
+                    display: flex
+                    align-items: center
+                    justify-content: center
+
+                    > span
+                      color: rgb(255, 255, 255)
+                      font-family: "Proxima Nova"
+                      font-size: pxToVw(10)
+                      font-weight: 700
+
+            > .rewardButtonKeepCell
+              width: 100%
+              height: pxToVw(30)
+              border-radius: pxToVw(5)
+              background: rgba(30, 30, 30)
+              transition: background 0.2s ease
+              display: flex
+              align-items: center
+              justify-content: center
+
+              > span
+                color: rgba(255, 255, 255)
+                font-family: "Proxima Nova"
+                font-size: pxToVw(12)
+                font-weight: 400
+
+              &:hover
+                background: rgb(29, 99, 230)
+
+            > .rewardButtonReceivedCell
+              width: 100%
+              height: pxToVw(30)
+              border-radius: pxToVw(5)
+              background: rgba(30, 30, 30, 0.5)
+              display: flex
+              align-items: center
+              justify-content: center
+              
+              > span
+                color: rgba(255, 255, 255, 0.2)
+                font-family: "Proxima Nova"
+                font-size: pxToVw(12)
+                font-weight: 400
+
+            > .rewardButtonUnavailableCell
+              width: 100%
+              height: pxToVw(30)
+              border-radius: pxToVw(5)
+              background: rgb(230, 29, 63)
+              display: flex
+              align-items: center
+              justify-content: center
+              
+              > span
+                color: rgba(255, 255, 255)
+                font-family: "Proxima Nova"
+                font-size: pxToVw(12)
+                font-weight: 400
+
+      > .rewardLink
+        margin-top: pxToVw(45)
+        width: pxToVw(466)
+        height: pxToVw(675)
+        border-radius: pxToVw(5)
+        display: flex
+        flex-direction: column
+        gap: pxToVw(35)
+        padding: pxToVw(20)
+        background: rgba(22, 22, 22, 0.5)
+
+        > .mainHeader
+          display: flex
+          justify-content: space-between
+
+          > .title
+            display: flex
+            flex-direction: column
+            gap: pxToVw(8)
+
+            > .nameOfTitle
+              display: flex
+              gap: pxToVw(5)
+              font-family: "Proxima Nova"
+              font-weight: 700
+              font-size: pxToVw(24)
+              text-transform: uppercase
+
+              > .defaultTitle
+                color: rgb(255, 255, 255)
+
+                > span
+                  font-family: "Proxima Nova"
+
+              > .customTitle
+                color: rgb(29, 99, 230)
+                position: relative
+                display: flex
+                align-items: center
+                justify-content: center
+                
+                > span
+                  font-family: "Proxima Nova"
+
+                > .backgroundLight
+                  position: absolute
+
+                  > span
+                    font-family: "Proxima Nova"
+                    filter: blur(pxToVw(10))
+                    color: rgb(29, 99, 230)
+
+            > .description
+              width: pxToVw(205)
+              color: rgba(255, 255, 255, 0.5)
+              font-weight: 400
+              font-size: pxToVw(12)
+
+              > span
+                font-family: "Proxima Nova"
+
+        > .listLink
+          display: flex
+          flex-direction: column
+          gap: pxToVw(15)
+          overflow-y: auto
+
+          &::-webkit-scrollbar
+            width: 0
+
+          > .social
+            width: 100%
+            display: flex
+            flex-direction: column
+            gap: pxToVw(5)
+            height: pxToVw(158)
+
+            > .cellLink
+              border-radius: pxToVw(5)
+              background: rgb(28, 28, 28)
+              display: flex
+              gap: pxToVw(16)
+              padding: pxToVw(20) pxToVw(14) pxToVw(14)
+              height: pxToVw(121)
+
+              > .logoLink
+                position: relative
+                width: pxToVw(54)
+                height: pxToVw(54)
+                display: flex
+                align-items: center
+                justify-content: center
+
+                > img
+                  width: 100%
+                  height: 100%
+                  z-index: 2
+
+                > .blurLogo
+                  position: absolute
+                  width: pxToVw(54)
+                  height: pxToVw(54)
+                  z-index: 1
+                  display: flex
+                  align-items: center
+                  justify-content: center
+
+                  > img
+                    width: 100%
+                    height: 100%
+                    filter: blur(pxToVw(10))
+
+              > .descriptionLink
+                display: flex
+                flex-direction: column
+                gap: pxToVw(8)
+                height: pxToVw(87)
+
+                > .titleLink
+                  text-align: left
+                  height: pxToVw(19)
+                  display: flex
+                  align-items: center
+
+                  > span
+                    color: rgb(255, 255, 255)
+                    font-family: "Proxima Nova"
+                    font-weight: 700
+                    font-size: pxToVw(16) 
+
+                > .rewardType
+                  width: auto
+                  height: pxToVw(22)
+                  display: inline-flex
+                  align-items: center
+                  justify-content: flex-start
+
+                  > .rewardTypeWrapper
+                    width: auto
+                    padding: pxToVw(4) pxToVw(13)
+                    height: pxToVw(22)
+                    display: inline-flex
+                    align-items: center
+                    justify-content: center
+                    background: rgb(29, 99, 230)
+                    border-radius: pxToVw(2)
+                    gap: pxToVw(4)
+
+                    > img
+                      width: pxToVw(12)
+                      height: pxToVw(12)
+                      transform: translate(0, pxToVw(-0.5))
+
+                    > span
+                      color: rgb(255, 255, 255)
+                      font-family: "Proxima Nova"
+                      font-weight: 700
+                      font-size: pxToVw(12)
+
+                > .descriptionTitle
+                  text-align: left
+                  max-width: pxToVw(213)
+                  height: pxToVw(30)
+                  display: flex
+                  align-items: center
+
+                  > span
+                    color: rgb(255, 255, 255)
+                    font-family: "Proxima Nova"
+                    font-size: pxToVw(12)
+                    font-weight: 400
+
+            > .buttonAvailable
+              width: 100%
+              height: pxToVw(37)
+              border-radius: pxToVw(5)
+              background: rgb(28, 28, 28)
+              display: flex
+              align-items: center
+              justify-content: center
+              transition: background 0.2s ease
+
+              &:hover
+                background: rgb(29, 99, 230)
+
+              &:active
+                background: rgb(20, 68, 158)
+              
+              > span
+                color: rgb(255, 255, 255)
+                font-family: "Proxima Nova"
+                font-size: pxToVw(12)
+                font-weight: 400
+
+            > .buttonUnvailable
+              width: 100%
+              height: pxToVw(37)
+              border-radius: pxToVw(5)
+              background: rgb(28, 28, 28)
+              display: flex
+              align-items: center
+              justify-content: center
+              
+              > span
+                color: rgb(255, 255, 255)
+                font-family: "Proxima Nova"
+                font-size: pxToVw(12)
+                font-weight: 400
+  
+  > .modalPassContainer
+    width: pxToVw(1719)
+    height: pxToVw(984)
+    background: rgba(0, 0, 0, 0.9)
+    position: absolute
+    z-index: 2
+
+  > .modalItemContainer
+    width: pxToVw(1719)
+    height: pxToVw(984)
+    background: rgba(0, 0, 0, 0.9)
+    position: absolute
+    z-index: 2
